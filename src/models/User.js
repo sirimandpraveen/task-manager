@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     validate(value) {
       if(value<0) { throw new Error('Age must be positive number.')}
   }},
-  email: { type: String, required: true, 
+  email: { type: String, unique: true, required: true, lowercase: true, trim: true, 
     validate(value) {
       if(!validator.isEmail(value)) {
         throw new Error('Email is invalid')
