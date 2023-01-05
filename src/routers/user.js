@@ -114,7 +114,7 @@ const upload = multer({
   storage: storage,
   limits: {fileSize:1000000},
   fileFilter(req, file, cb) {
-    if(!file.originalname.match(/\.(jpg)$/)) {
+    if(!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
       return cb(new Error("please upload a image"))
     }
 
@@ -148,7 +148,7 @@ router.get('/avatar/:id', async (req, res) => {
     res.set('Content-Type', 'image/png')
     res.send(user.avatar)
   } catch (e) {
-    res.status(404).send(e)
+    res.status(404).send(e.message)
   }
 })
 

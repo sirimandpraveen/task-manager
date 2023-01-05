@@ -6,7 +6,7 @@ import taskRouter from './routers/task.js'
 
 
 dotenv.config()
-// console.log('') /Users/sirim/mongodb/bin/mongod.exe --dbpath=/Users/sirim/mongodb-data
+// console.log(' ') /Users/sirim/mongodb/bin/mongod.exe --dbpath=/Users/sirim/mongodb-data
 const app = express()
 
 app.use(express.json())
